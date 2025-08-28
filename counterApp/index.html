@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center w-[100vw] h-[100vh] bg-[#344151] gap-10">
+        <div class="text-[#0398d4] font-medium">Increment and Decrement</div>
+        <div class="flex text-[25px] text-[#344151] rounded-sm bg-white gap-12 p-3 px-5">
+            <button onclick="decrement()" class="border-r-2 border-[#bfbfbf] pr-5 btn_-">
+                <i class="fas fa-minus"></i>
+            </button>
+
+            <div class="count font-bold">
+                0
+            </div>
+
+            <button onclick="increment()" class="btn_+ border-l-2 border-[#bfbfbf] pl-5">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>
