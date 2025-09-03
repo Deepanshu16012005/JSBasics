@@ -49,7 +49,7 @@ searchTab.addEventListener('click', () => {
 function getFromSessionStorage(){
     const localCoordinates = sessionStorage.getItem("user-coordinates");
     if(!localCoordinates){
-        grantLocationAccess.classList.add("active");
+        grantLocationConatiner.classList.add("active");
         return;
     }
     const coordinates = JSON.parse(localCoordinates);
@@ -59,14 +59,14 @@ function getFromSessionStorage(){
 async function fetchUserWeatherInfo(coordinates){
     const {lat , lon} = coordinates;
 
-    grantLocationAccess.classList.remove("active");
+    grantLocationConatiner.classList.remove("active");
     loadingConatiner.classList.add("active");
 
     try{
         const response= await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
         );
-        const data = await response.JSON();
+        const data = await response.json();
         loadingConatiner.classList.remove("active");
         renderWeatherInfo(data);
         showWeatherConatiner.classList.add("active");
@@ -77,7 +77,7 @@ async function fetchUserWeatherInfo(coordinates){
 }
 function renderWeatherInfo(data){
     cityName.innerText = data?.name;
-    weatherTemprature.innerText = data?.main?.temp;
+    weatherTemprature.innerText = `${data?.main?.temp} °C`;
     weatherDescription.innerText = data?.weather[0]?.description;
     clouds.innerText = data?.clouds?.all;
     windSpeed.innerText = data?.wind?.speed;   
@@ -102,7 +102,7 @@ function showPosition(position){
     fetchUserWeatherInfo(userCod);
 }
 
-searchForm.addEventListener('sumbit' , (e)=>{
+searchForm.addEventListener('submit' , (e)=>{
     e.preventDefault();
     if(searchInput.value === "")return;
     fetchSearchWeatherInfo(searchInput.value);
