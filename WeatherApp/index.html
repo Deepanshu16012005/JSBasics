@@ -5,9 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <h1 class="heading">Weather App</h1>
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+            <!-- grant location -->
+            <div class="grant-location-conatiner">
+                <img src="assets/location.png" width="80" height="80" loading="lazy">
+                <p>Grant location access</p>
+                <p>Allow access to get weather information</p>
+                <button class="button" data-grantLocationAccess>Grant Access</button>
+            </div>
+
+            <!-- search weather -->
+            <form class="form-container" data-searchForm>
+                <input placeholder="Enter the city" data-searchInput>
+                <button class="button" data-searchWeather>
+                    <img src="assets/search.png" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!-- loading  -->
+            <div class="loading-container">
+                <img src="assets/loading.gif" width="150" height="150">
+                <p>Loading....</p>
+            </div> 
+
+            <!-- main output -->
+            <div class="show-weather-container">
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+                <p data-weatherDescription></p>
+                <img data-weatherDescriptionImage>
+                <p data-weatherTemprature></p>
+                <div class="other-weather-info">
+                    <div class="card">
+                        <img src="assets/wind.png" width="" height="">
+                        <p>WindSpeed</p>
+                        <p data-windSpeed></p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/humidity.png" width="" height="">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/cloud.png" width="" height="">
+                        <p>Clouds</p>
+                        <p data-clouds></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

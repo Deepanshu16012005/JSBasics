@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tab.current-tab{
+    border-radius: 4px;
+    background-color: rgba(219,226,239,0.5);
+}
+.form-container.active{
+    scale: 1;
+}
